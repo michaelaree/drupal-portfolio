@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="{{ language.getId() }}">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ head_title }}</title>
+    {{ head }}
+    {{ styles }}
+    {{ scripts }}
+    <style>
+      body {
+        margin: 0; /* Remove default margin */
+      }
+      .hero-text h1 {
+  color: white;
+}
+
+
+      .hero-image {
+        position: relative;
+        width: 100%;
+        height: 650px; /* Adjust the height as needed */
+        background: url('{{ directory }}/images/hilton.jpg') no-repeat center center;
+        background-size: cover;
+      }
+
+      /* Text content placed in front of the background image */
+      .hero-text {
+        position: absolute;
+        top: 80%; /* Adjusted to drop the text down a bit */
+        left: 50%; /* Position the text horizontally centered */
+        transform: translate(-50%, -50%); /* Exactly center the text */
+        color: white;
+        font-size: 2rem; /* Adjust font size */
+        text-align: center;
+        padding: 20px;
+        margin: 0; /* Remove margin */
+        background-color: rgba(0, 0, 0, 0.5); /* Optional: Adds dark background to text for contrast */
+        border-radius: 8px; /* Optional: Adds rounded corners to the background */
+        z-index: 2; /* Ensure the text is above the background image */
+      }
+
+      header {
+        position: relative;
+        z-index: 3; /* Ensure the header is above the hero image */
+      }
+
+      /* Overlay using the ::before pseudo-element */
+      .hero-image::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5); /* Semi-transparent dark overlay */
+        z-index: 1; /* Ensure the overlay is above the image */
+      }
+
+      /* Content inside the hero-image (e.g., text, logo, etc.) */
+      .hero-image > * {
+        position: relative;
+        z-index: 2;
+      }
+      body {
+        font-family: 'Arial', sans-serif;
+        background-color: #f9f9f9;
+        color: #333;
+        margin: 0;
+        padding: 0;
+      }
+
+      .main-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        padding: 60px;
+        gap: 40px;
+
+      }
+
+      .text-section {
+        background-color: #1a1a2e;
+        color: white;
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      }
+
+      .text-section h2 {
+        font-size: 2rem;
+        margin-bottom: 16px;
+        color: #ff6f61;
+
+      }
+
+      .text-section p {
+        font-size: 1.1rem;
+        line-height: 1.6;
+      }
+
+      .image-section img {
+        width: 100%;
+        height: 400px;
+        border-radius: 12px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+    </style>
+  </head>
+  <body class="{{ body_classes }} {{ page_class }}">
+    <header>
+      <div class="logo">
+        <a href="{{ path('<front>') }}">
+          <img src="{{ directory }}/images/placeholder.png" alt="My Portfolio Logo">
+        </a>
+      </div>
+      <nav>
+        {{ page.primary_menu }}
+      </nav>
+    </header>
+
+    <div class="hero-image"></div>
+
+    <div class="main-content">
+      <!-- Text Section -->
+      <div class="text-section">
+        <h2>Welcome to My Portfolio!</h2>
+        <p>
+          Hi, I'm Michael Aree, a passionate web developer specializing in Drupal solutions at Cocomore. With a dedication to crafting dynamic, user-centric websites, I take pride in building seamless digital experiences that deliver real value.
+          <br><br>
+          Feel free to explore my work, where creativity meets robust development practices. Let's connect and bring innovative ideas to life together!
+        </p>
+      </div>
+
+      <!-- Image Section -->
+      <div class="image-section">
+        <img src="{{ directory }}/images/aree1.png" alt="Striking Color Palette">
+      </div>
+    </div>
+
+    <!-- Hero Text Overlay -->
+    <div class="hero-text">
+      <h1>Welcome to My Portfolio</h1>
+      <p>Explore my work and creative projects</p>
+    </div>
+
+     <section class="projects-section" id="projects" style="padding: 60px 20px; background-color: #f9f9f9; text-align: center;">
+  <h2 style="font-size: 2.5rem; margin-bottom: 20px; color: #333;">Featured Projects</h2>
+  <p style="font-size: 1.2rem; color: #555; margin-bottom: 40px;">Below are some of my key projects. Each one highlights my approach to web development, from custom Drupal theming to complex module integration and responsive design.</p>
+
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px;">
+    <!-- Project 1 -->
+    <div class="project-item" style="background-color: #fff; border-radius: 12px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); padding: 20px; text-align: left; transition: transform 0.3s ease-in-out;">
+      <img src="{{ directory }}/images/project1.jpg" alt="Project 1" style="width: 100%; border-radius: 8px; height: auto;">
+      <h3 style="font-size: 1.8rem; margin-top: 15px; color: #333;">Project Title 1</h3>
+      <p style="font-size: 1rem; color: #777; margin: 15px 0;">A comprehensive website redesign for a local business, where I focused on improving user experience and creating a responsive layout. The project also included custom Drupal module development for real-time data integration.</p>
+      <ul style="list-style: none; padding: 0; margin: 0;">
+        <li style="font-size: 0.9rem; color: #555;"><strong>Technologies:</strong> Drupal 9, PHP, JavaScript</li>
+        <li style="font-size: 0.9rem; color: #555;"><strong>Role:</strong> Lead Developer</li>
+        <li style="font-size: 0.9rem; color: #555;"><strong>Duration:</strong> 3 months</li>
+      </ul>
+      <a href="project1-link" style="display: inline-block; margin-top: 15px; padding: 10px 20px; background-color: #007bff; color: #fff; text-decoration: none; border-radius: 8px; font-weight: bold; transition: background-color 0.3s;">View Project</a>
+    </div>
+
+    <!-- Project 2 -->
+    <div class="project-item" style="background-color: #fff; border-radius: 12px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); padding: 20px; text-align: left; transition: transform 0.3s ease-in-out;">
+      <img src="{{ directory }}/images/project2.jpg" alt="Project 2" style="width: 100%; border-radius: 8px; height: auto;">
+      <h3 style="font-size: 1.8rem; margin-top: 15px; color: #333;">Project Title 2</h3>
+      <p style="font-size: 1rem; color: #777; margin: 15px 0;">This e-commerce website was developed with a focus on seamless checkout experience and integrating third-party payment gateways. I worked on the backend to ensure smooth functionality and custom theming to align with the client's brand.</p>
+      <ul style="list-style: none; padding: 0; margin: 0;">
+        <li style="font-size: 0.9rem; color: #555;"><strong>Technologies:</strong> Drupal Commerce, PHP, MySQL</li>
+        <li style="font-size: 0.9rem; color: #555;"><strong>Role:</strong> Full Stack Developer</li>
+        <li style="font-size: 0.9rem; color: #555;"><strong>Duration:</strong> 4 months</li>
+      </ul>
+      <a href="project2-link" style="display: inline-block; margin-top: 15px; padding: 10px 20px; background-color: #007bff; color: #fff; text-decoration: none; border-radius: 8px; font-weight: bold; transition: background-color 0.3s;">View Project</a>
+    </div>
+
+    <!-- Project 3 -->
+    <div class="project-item" style="background-color: #fff; border-radius: 12px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); padding: 20px; text-align: left; transition: transform 0.3s ease-in-out;">
+      <img src="{{ directory }}/images/project3.jpg" alt="Project 3" style="width: 100%; border-radius: 8px; height: auto;">
+      <h3 style="font-size: 1.8rem; margin-top: 15px; color: #333;">Project Title 3</h3>
+      <p style="font-size: 1rem; color: #777; margin: 15px 0;">A personal blog platform built with Drupal, where I implemented custom content types and optimized the website for fast loading times. The project included designing a user-friendly interface and ensuring it was fully mobile-responsive.</p>
+      <ul style="list-style: none; padding: 0; margin: 0;">
+        <li style="font-size: 0.9rem; color: #555;"><strong>Technologies:</strong> Drupal 9, HTML, CSS, jQuery</li>
+        <li style="font-size: 0.9rem; color: #555;"><strong>Role:</strong> Frontend Developer</li>
+        <li style="font-size: 0.9rem; color: #555;"><strong>Duration:</strong> 2 months</li>
+      </ul>
+      <a href="project3-link" style="display: inline-block; margin-top: 15px; padding: 10px 20px; background-color: #007bff; color: #fff; text-decoration: none; border-radius: 8px; font-weight: bold; transition: background-color 0.3s;">View Project</a>
+    </div>
+
+    <!-- Project 4 -->
+    <div class="project-item" style="background-color: #fff; border-radius: 12px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); padding: 20px; text-align: left; transition: transform 0.3s ease-in-out;">
+      <img src="{{ directory }}/images/project4.jpg" alt="Project 4" style="width: 100%; border-radius: 8px; height: auto;">
+      <h3 style="font-size: 1.8rem; margin-top: 15px; color: #333;">Project Title 4</h3>
+      <p style="font-size: 1rem; color: #777; margin: 15px 0;">This project was a complete Drupal migration for a large non-profit. It involved transferring the existing site to a new platform, ensuring data integrity, and providing ongoing maintenance post-launch to optimize performance.</p>
+      <ul style="list-style: none; padding: 0; margin: 0;">
+        <li style="font-size: 0.9rem; color: #555;"><strong>Technologies:</strong> Drupal 8 to Drupal 9 Migration, PHP</li>
+        <li style="font-size: 0.9rem; color: #555;"><strong>Role:</strong> Project Lead</li>
+        <li style="font-size: 0.9rem; color: #555;"><strong>Duration:</strong> 6 months</li>
+      </ul>
+      <a href="project4-link" style="display: inline-block; margin-top: 15px; padding: 10px 20px; background-color: #007bff; color: #fff; text-decoration: none; border-radius: 8px; font-weight: bold; transition: background-color 0.3s;">View Project</a>
+    </div>
+
+    <!-- Project 5 -->
+    <div class="project-item" style="background-color: #fff; border-radius: 12px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); padding: 20px; text-align: left; transition: transform 0.3s ease-in-out;">
+      <img src="{{ directory }}/images/project5.jpg" alt="Project 5" style="width: 100%; border-radius: 8px; height: auto;">
+      <h3 style="font-size: 1.8rem; margin-top: 15px; color: #333;">Project Title 5</h3>
+      <p style="font-size: 1rem; color: #777; margin: 15px 0;">A modern portfolio website designed to showcase creative projects. It integrates with a custom-built content management system (CMS) for easy content updates, along with SEO optimizations for better visibility.</p>
+      <ul style="list-style: none; padding: 0; margin: 0;">
+        <li style="font-size: 0.9rem; color: #555;"><strong>Technologies:</strong> HTML5, CSS3, JavaScript, SEO</li>
+        <li style="font-size: 0.9rem; color: #555;"><strong>Role:</strong> UI/UX Designer & Developer</li>
+        <li style="font-size: 0.9rem; color: #555;"><strong>Duration:</strong> 2 months</li>
+      </ul>
+      <a href="project5-link" style="display: inline-block; margin-top: 15px; padding: 10px 20px; background-color: #007bff; color: #fff; text-decoration: none; border-radius: 8px; font-weight: bold; transition: background-color 0.3s;">View Project</a>
+    </div>
+  </div>
+</section>
+
+    <footer>
+      <p>&copy; 2025 Portfolio</p>
+    </footer>
+  </body>
+</html>

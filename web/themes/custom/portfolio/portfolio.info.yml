@@ -1,0 +1,12 @@
+name: 'Portfolio'
+type: theme
+core_version_requirement: ^10 || ^11
+base theme: olivero
+description: 'A visually appealing custom theme for portfolio and services.'
+libraries:
+  - portfolio/global-styling
+regions:
+  header: 'Header'
+  primary_menu: 'Primary Menu'
+  content: 'Main Content'
+  footer: 'Footer'

@@ -1,0 +1,13 @@
+<article class="portfolio-item">
+  <h2 class="portfolio-title">{{ label }}</h2>
+  <div class="portfolio-content">
+    <div class="portfolio-image">
+      {% if content.field_image %}
+        {{ content.field_image }}
+      {% else %}
+        <img src="{{ directory }}/images/placeholder.png" alt="Placeholder image">
+      {% endif %}
+    </div>
+    <div class="portfolio-description">{{ content.body }}</div>
+  </div>
+</article>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="{{ language.getId() }}">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ head_title }}</title>
+    {{ head }}
+    {{ styles }}
+    {{ scripts }}
+    <style>
+      body {
+        margin: 0;
+        font-family: 'Arial', sans-serif;
+        background-color: #f9f9f9;
+        color: #333;
+      }
+
+      /* Hero Section */
+      .hero-section {
+        text-align: center;
+        padding: 80px 20px;
+        background-color: #005f6b;
+        color: white;
+      }
+
+      .hero-section h1 {
+        font-size: 3rem;
+        margin: 0;
+        font-weight: 700;
+      }
+
+      .hero-section p {
+        font-size: 1.2rem;
+        margin: 20px 0;
+        line-height: 1.6;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      /* Contact Form Section */
+      .contact-section {
+        padding: 60px 20px;
+        background-color: #ffffff;
+        color: #333;
+      }
+
+      .contact-section h2 {
+        font-size: 2.5rem;
+        color: black;
+        margin-bottom: 20px;
+        font-weight: 700;
+        text-align: center;
+      }
+
+      .contact-section p {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        max-width: 800px;
+        margin: 0 auto 20px;
+        color: black;
+        text-align: center;
+      }
+
+      .contact-form {
+        max-width: 600px;
+        margin: 0 auto;
+        background-color: #f0f0f0;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      }
+
+      .contact-form input,
+      .contact-form textarea {
+        width: 100%;
+        padding: 12px;
+        margin: 10px 0;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+      }
+
+      .contact-form button {
+        background-color: #007bff;
+        color: white;
+        padding: 12px 25px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      .contact-form button:hover {
+        background-color: #0056b3;
+      }
+
+      footer {
+        margin-top: 40px;
+        padding: 20px 0;
+        background-color: #00264d;
+        color: white;
+        text-align: center;
+      }
+
+      /* Responsive Styling */
+      @media screen and (max-width: 768px) {
+        .hero-section h1 {
+          font-size: 2.5rem;
+        }
+
+        .hero-section p {
+          font-size: 1rem;
+        }
+      }
+    </style>
+  </head>
+  <body class="{{ body_classes }} {{ page_class }}">
+    <header>
+      <div class="logo">
+        <a href="{{ path('<front>') }}">
+          <img src="{{ directory }}/images/placeholder.png" alt="My Portfolio Logo">
+        </a>
+      </div>
+      <nav>
+        {{ page.primary_menu }}
+      </nav>
+    </header>
+
+    <section class="hero-section">
+      <h1>Contact Me</h1>
+      <p>If you have any questions or would like to work together, feel free to reach out!</p>
+    </section>
+
+    <section class="contact-section">
+      <h2>Get in Touch</h2>
+      <p>I'd love to hear from you! Whether you have a project in mind or just want to chat, feel free to send me a message.</p>
+
+      <form class="contact-form" action="#" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" rows="6" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </section>
+
+    <footer>
+      <p>&copy; 2025 Portfolio</p>
+    </footer>
+  </body>
+</html>

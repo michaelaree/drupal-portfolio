@@ -1,0 +1,14 @@
+<?php
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter() to add custom templates.
+ */
+function portfolio_theme_suggestions_page_alter(array &$suggestions, array $variables) {
+    // Check if the page is the Portfolio page.
+    // This assumes the Portfolio page has a specific URL path or route.
+    if (\Drupal::routeMatch()->getRouteName() == 'page--portfolio.html.twig') {
+      // Suggest the page--portfolio.html.twig template
+      $suggestions[] = 'page__portfolio';
+    }
+  }
+
